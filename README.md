@@ -7,7 +7,7 @@
 > - only one head?
 > - add/remove from the root of the tree?
 
-### Requirements
+### Assignment Requirements
 > 1. Data visualization 
 > 2. Unit testing
 > 3. The actual java code
