@@ -7,6 +7,9 @@
 > - only one head?
 > - add/remove from the root of the tree?
 
+### Online References
+> https://www.geeksforgeeks.org/binary-tree-data-structure/
+
 ### Assignment Requirements
 > 1. Data visualization 
 > 2. Unit testing
