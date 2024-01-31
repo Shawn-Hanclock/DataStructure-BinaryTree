@@ -15,4 +15,18 @@ public class Node
     public void setData(int data) {
         this.data = data;
     }
+
+    public void getNext()
+    {
+
+    }
+
+    public Node getLeft()
+    {
+        return left;
+    }
+    public Node getRight()
+    {
+        return right;
+    }
 }
