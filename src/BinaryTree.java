@@ -2,7 +2,6 @@
 // [] remove elemeents
 // [] tranverse elements
 // [] output data in strucuture
-
 public class BinaryTree
 {
     // variables
