@@ -5,44 +5,38 @@
 public class BinaryTree
 {
     // variables
-    private Node root;
-
+    private Node root = null;
     // constructor
     public BinaryTree()
     {
-        root = null;
+//        root = new Node();
+//        root =
     }
-    public void addRoot(int data)
+    public void addNode(int data)
     {
-        if(root == null) {
-            root = new Node(data);
+        if(root != null)
+        {
+            if(root.getLeft() == null)
+            {
+                root.setLeft(data);
+            }
+            else if(root.getRight() == null)
+            {
+                root.setRight(data);
+            }
         }
         else {
-            root.setData(data);
+            root = new Node(data);
         }
     }
-    public void addNodeFill(int data)
+    public String toString()
     {
-//        root.
+        if(root != null)
+        {
+            String output = "";
+            output += root.getData() ;
+            return output;
+        }
+        return "Empty tree, root is null.";
     }
-
-    public boolean hasLeft()
-    {
-        Node pos = root;
-        return pos.getLeft() != null;
-    }
-    public boolean hasRight()
-    {
-        Node pos = root;
-        return pos.getRight() != null;
-    }
-
-
-    // population methods
-    // insert element
-    // remove element
-
-    // brain methods
-    // transverse the tree
-    //
 }
