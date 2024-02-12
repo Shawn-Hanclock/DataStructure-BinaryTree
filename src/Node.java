@@ -11,18 +11,14 @@ public class Node
         left = null;
         right = null;
     }
-
-    public void addNode(Node root, int data)
+    public void addNew(int data)
     {
-        if(root.getLeft() == null)
+        do
         {
-
-        }
-        else if(root.getRight() == null)
-        {
-
+//            if(.isFull())
         }
     }
+
     public void setData(int data) {
         this.data = data;
     }
@@ -40,5 +36,9 @@ public class Node
     }
     public Node getRight() {
         return right;
+    }
+    public boolean isFull()
+    {
+        return left == null && right == null;
     }
 }

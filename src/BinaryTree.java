@@ -6,6 +6,7 @@ public class BinaryTree
 {
     // variables
     private Node root;
+    private int height;
     // constructor
     public BinaryTree(int data)
     {
@@ -14,20 +15,11 @@ public class BinaryTree
     public BinaryTree()
     {
         root = null;
+        height = 0;
     }
     public void addNode(int data)
     {
-        if(root == null)
-        {
-            root = new Node(data);
-        }
-        else
-        {
-            if(root.getLeft() != null)
-            {
-
-            }
-        }
+        root.addNew(data);
     }
     public String toString()
     {
