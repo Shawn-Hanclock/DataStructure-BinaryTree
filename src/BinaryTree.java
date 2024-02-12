@@ -5,28 +5,28 @@
 public class BinaryTree
 {
     // variables
-    private Node root = null;
+    private Node root;
     // constructor
+    public BinaryTree(int data)
+    {
+        root = new Node(data);
+    }
     public BinaryTree()
     {
-//        root = new Node();
-//        root =
+        root = null;
     }
     public void addNode(int data)
     {
-        if(root != null)
+        if(root == null)
         {
-            if(root.getLeft() == null)
-            {
-                root.setLeft(data);
-            }
-            else if(root.getRight() == null)
-            {
-                root.setRight(data);
-            }
-        }
-        else {
             root = new Node(data);
+        }
+        else
+        {
+            if(root.getLeft() != null)
+            {
+
+            }
         }
     }
     public String toString()
