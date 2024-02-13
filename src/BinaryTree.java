@@ -6,29 +6,32 @@ public class BinaryTree
 {
     // variables
     private Node root;
-    private int height;
     // constructor
     public BinaryTree(int data)
     {
-        root = new Node(data);
+        root = new Node(Math.abs(data));
+    }
+    public BinaryTree(BinaryTree branch)
+    {
+        root = new Node(branch);
     }
     public BinaryTree()
     {
-        root = null;
-        height = 0;
+        root = new Node();
     }
-    public void addNode(int data)
+
+    public Node getRoot()
     {
-        root.addNew(data);
+        return root;
     }
+
     public String toString()
     {
-        if(root != null)
+        if(root.getData() != -1)
         {
-            String output = "";
-            output += root.getData() ;
+            String output = root.getData() + root.getLeft() + root.getRight().toString() + "";
             return output;
         }
-        return "Empty tree, root is null.";
+        return "Empty tree, root is empty.";
     }
 }

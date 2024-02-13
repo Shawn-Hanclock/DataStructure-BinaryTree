@@ -11,13 +11,19 @@ public class Node
         left = null;
         right = null;
     }
-    public void addNew(int data)
+    public Node(BinaryTree branch)
     {
-        do
-        {
-//            if(.isFull())
-        }
+        data = branch.getRoot().getData();
+        left = branch.getRoot();
+        right = null;
     }
+    public Node()
+    {
+        data = -1;
+        left = null;
+        right = null;
+    }
+
 
     public void setData(int data) {
         this.data = data;
@@ -40,5 +46,14 @@ public class Node
     public boolean isFull()
     {
         return left == null && right == null;
+    }
+
+    public String printTree()
+    {
+        if(data == -1)
+        {
+            return "";
+        }
+        return data + left.printTree() + right.printTree();
     }
 }
