@@ -1,6 +1,6 @@
 public class Node
 {
-    private int data;
+    private Integer data;
     private Node left;
     private Node right;
     //data
@@ -11,19 +11,12 @@ public class Node
         left = null;
         right = null;
     }
-    public Node(BinaryTree branch)
-    {
-        data = branch.getRoot().getData();
-        left = branch.getRoot();
-        right = null;
-    }
     public Node()
     {
-        data = -1;
+        data = null;
         left = null;
         right = null;
     }
-
 
     public void setData(int data) {
         this.data = data;
@@ -48,12 +41,17 @@ public class Node
         return left == null && right == null;
     }
 
-    public String printTree()
+    public String printBranches()
     {
-        if(data == -1)
+        if(data == null )
         {
             return "";
         }
-        return data + left.printTree() + right.printTree();
+        String output = data.toString();
+        if(left != null)
+            output += left.printBranches();
+        if(right != null)
+            output += right.printBranches();
+        return output;
     }
 }

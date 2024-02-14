@@ -10,9 +10,9 @@ public class Main {
 
         //You can add negative values, but it will turn positive.
         BinaryTree treeNeg = new BinaryTree(-1);
-        System.out.println(treeNeg);
+//        System.out.println(treeNeg);
 
-        BinaryTree bothTree = new BinaryTree(tree);
+//        BinaryTree bothTree = new BinaryTree(tree);
 
 //        tree.addNode(1);
 //        tree.addNode(2);
