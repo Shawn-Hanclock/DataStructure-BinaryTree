@@ -27,7 +27,11 @@ public class Node
         right = null;
         parent = null;
     }
-
+    public void addNew(int data, Node parent)
+    {
+        if(left == null)
+            left = new Node(data, parent);
+    }
     public void setData(int data) {
         this.data = data;
     }
@@ -65,11 +69,11 @@ public class Node
         {
             return "";
         }
-        String output = data.toString();
+        String output = data.toString() + "";
         if(left != null)
-            output += left.printBranches();
+            output += left.printBranches() + "";
         if(right != null)
-            output += right.printBranches();
+            output += right.printBranches() + "";
         return output;
     }
 }

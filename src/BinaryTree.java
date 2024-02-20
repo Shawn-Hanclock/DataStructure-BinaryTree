@@ -2,6 +2,7 @@
 // [] remove elements
 // [] tranverse elements
 // [] output data in strucuture
+
 public class BinaryTree
 {
     // variables
@@ -34,7 +35,7 @@ public class BinaryTree
            root.setData(data);
        }
        else {
-            //add it left
+            root.addNew(data, root);
        }
     }
 
