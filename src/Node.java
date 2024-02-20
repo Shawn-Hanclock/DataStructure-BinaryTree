@@ -3,6 +3,7 @@ public class Node
     private Integer data;
     private Node left;
     private Node right;
+    private Node parent;
     //data
     //pointer left and right
     public Node(int data)
@@ -10,12 +11,21 @@ public class Node
         this.data = data;
         left = null;
         right = null;
+        parent = null;
+    }
+    public Node(int data, Node parent)
+    {
+        this.data = data;
+        left = null;
+        right = null;
+        this.parent = parent;
     }
     public Node()
     {
         data = null;
         left = null;
         right = null;
+        parent = null;
     }
 
     public void setData(int data) {

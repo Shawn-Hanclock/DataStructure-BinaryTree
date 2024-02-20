@@ -1,5 +1,5 @@
 // [] add elements
-// [] remove elemeents
+// [] remove elements
 // [] tranverse elements
 // [] output data in strucuture
 public class BinaryTree
@@ -11,10 +11,7 @@ public class BinaryTree
     {
         root = new Node(data);
     }
-//    public BinaryTree(BinaryTree branch)
-//    {
-//        root = new Node(branch);
-//    }
+
     public BinaryTree()
     {
         root = new Node();
@@ -25,15 +22,15 @@ public class BinaryTree
         return root;
     }
 
-//    public String toString()
-//    {
-//        if(root.getData() != -1)
-//        {
-//            String output = root.getData() +(root.getLeft()).toString() + (root.getRight()).toString() + "";
-//            return output;
-//        }
-//        return "Empty tree, root is empty.";
-//    }
+    //binary tree add data
+    //1 initalize if there is no data
+    //2 if not empty get the front element
+    // - if the front element does not have a left child then set the left child to a new node
+    // - if the right child is not present set the right child as new node
+    //3 if the node has both the children then pop it from the queue
+    //4 enqueue the new data
+
+
     public String toString()
     {
         String out = root.printBranches();
