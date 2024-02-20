@@ -12,6 +12,8 @@ public class Main {
         System.out.println(tree);
         tree.addData(2);
         System.out.println(tree);
+        tree.addData(3);
+        System.out.println(tree);
 
         //You can add negative values, but it will turn positive.
 //        BinaryTree treeNeg = new BinaryTree(-1);
