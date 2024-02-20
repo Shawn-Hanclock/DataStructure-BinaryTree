@@ -34,40 +34,32 @@ public class Node
     // - if the right child is not present set the right child as new node
     //3 if the node has both the children then pop it from the queue
     //4 enqueue the new data
-    public void addNew(int data, Node parent)
+    public void addNew(int addData, Node newParent)
     {
-        if(parent != null)
-        {
-            //idk yet
-        }
-        else {
          if(left == null)
-            left = new Node(data, parent);
+            left = new Node(addData, newParent);
          else if(right == null)
-            right = new Node(data, parent);
+            right = new Node(addData, newParent);
          else
-            addNew(data, left); 
-        }
+            addNew(data, left);
     }
     public void setData(int data) {
         this.data = data;
     }
     public Integer getData() {
-        try
-        {
+        try {
             int num = data.intValue();
             return num;
         }
-        catch(NullPointerException e)
-        {
+        catch(NullPointerException e) {
             return null;
         }
     }
     public void setLeft(int data) {
-        left = new Node(data);
+        left.setData(data);
     }
     public void setRight(int data) {
-        right = new Node(data);
+        right.setData(data);
     }
     public Node getLeft() {
         return left;
@@ -75,22 +67,37 @@ public class Node
     public Node getRight() {
         return right;
     }
-    public boolean isFull()
+    public Node getParent()
+    {
+        return parent;
+    }
+    public void setParent(int data)
+    {
+        parent.setData(data);
+    }
+    public boolean isLeaf()
     {
         return left == null && right == null;
     }
-
+    public int leafCount() //1 leaf or 2 leaf or 0 leaf
+    {
+        int count = 0;
+        if(left != null && !left.isLeaf())
+            count++;
+        if(right != null  && !right.isLeaf())
+            count++;
+        return count;
+    }
     public String printBranches()
     {
-        if(data == null )
-        {
+        if(data == null) {
             return "";
         }
-        String output = data.toString() + "";
+        String output = data.toString() + " ";
         if(left != null)
-            output += left.printBranches() + "";
+            output += left.printBranches();
         if(right != null)
-            output += right.printBranches() + "";
+            output += right.printBranches();
         return output;
     }
 }
