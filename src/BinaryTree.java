@@ -11,12 +11,10 @@ public class BinaryTree
     {
         root = new Node(data);
     }
-
     public BinaryTree()
     {
         root = new Node();
     }
-
     public Node getRoot()
     {
         return root;
@@ -30,6 +28,15 @@ public class BinaryTree
     //3 if the node has both the children then pop it from the queue
     //4 enqueue the new data
 
+    public void addData(int data)
+    {
+       if(root.getData() == null) {
+           root.setData(data);
+       }
+       else {
+            //add it left
+       }
+    }
 
     public String toString()
     {

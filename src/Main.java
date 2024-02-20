@@ -5,11 +5,15 @@ public class Main {
         //For these binary trees the data cannot be negative.
         BinaryTree empty = new BinaryTree();
         System.out.println(empty);
+        empty.addData(3);
+        System.out.println(empty);
+
         BinaryTree tree = new BinaryTree(1);
         System.out.println(tree);
 
         //You can add negative values, but it will turn positive.
-        BinaryTree treeNeg = new BinaryTree(-1);
+//        BinaryTree treeNeg = new BinaryTree(-1);
+//        System.out.println(treeNeg);
 //        System.out.println(treeNeg);
 
 //        BinaryTree bothTree = new BinaryTree(tree);

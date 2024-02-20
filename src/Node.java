@@ -31,8 +31,16 @@ public class Node
     public void setData(int data) {
         this.data = data;
     }
-    public int getData() {
-        return this.data;
+    public Integer getData() {
+        try
+        {
+            int num = data.intValue();
+            return num;
+        }
+        catch(NullPointerException e)
+        {
+            return null;
+        }
     }
     public void setLeft(int data) {
         left = new Node(data);
