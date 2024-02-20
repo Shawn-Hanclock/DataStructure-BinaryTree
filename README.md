@@ -4,7 +4,7 @@
 > 3. The actual java code
 
 ### Resources/ Research
-<p>Helpful article from *geeksforgeeks* about the Complete Binary Tree, 
+<p>Helpful article from <i>geeksforgeeks</i> about the Complete Binary Tree, 
 <a href="https://www.geeksforgeeks.org/complete-binary-tree/">link</a>.</p>
 
  - "For the creation of a Complete Binary Tree, we require a queue data structure to keep track of the inserted nodes."
