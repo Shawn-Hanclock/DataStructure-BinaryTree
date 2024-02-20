@@ -36,12 +36,12 @@ public class Node
     //4 enqueue the new data
     public void addNew(int addData, Node newParent)
     {
-         if(left == null)
-            left = new Node(addData, newParent);
-         else if(right == null)
-            right = new Node(addData, newParent);
+         if(newParent.left == null)
+            newParent.left = new Node(addData, newParent);
+         else if(newParent.right == null)
+            newParent.right = new Node(addData, newParent);
          else
-            addNew(data, left);
+            addNew(addData, left);
     }
     public void setData(int data) {
         this.data = data;
@@ -82,22 +82,32 @@ public class Node
     public int leafCount() //1 leaf or 2 leaf or 0 leaf
     {
         int count = 0;
-        if(left != null && !left.isLeaf())
-            count++;
-        if(right != null  && !right.isLeaf())
-            count++;
+        if(this.isLeaf())
+            return 1;
+        if(left != null)
+            count += left.leafCount();
+        if(right != null)
+            count += right.leafCount();
         return count;
     }
+
+    //List nodes in traversal order via a recursive algorithm starting at root:
+    //– Recursively list left subtree, list self, then recursively list right subtree
+    //– Runs in O(n) time, since O(1) work is done to list each node
+    //– Example: Traversal order is (<F>, <D>, <B>, <E>, <A>, <C>)
     public String printBranches()
     {
         if(data == null) {
             return "";
         }
+//        String output = data.toString() + " ";
+//        String temp = output;
+//        if(left != null)
+//            output = left.printBranches() + temp;
+//        if(right != null)
+//            output = temp + right.printBranches();
+//        return output;
         String output = data.toString() + " ";
-        if(left != null)
-            output += left.printBranches();
-        if(right != null)
-            output += right.printBranches();
         return output;
     }
 }

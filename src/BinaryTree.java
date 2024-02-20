@@ -3,6 +3,20 @@
 // [] tranverse elements
 // [] output data in strucuture
 
+//traversals from MIT
+//Find first node in the traversal order of node <X>’s subtree (last is symmetric)
+//– If <X> has left child, recursively return the first node in the left subtree
+//– Otherwise, <X> is the first node, so return it
+//– Running time is O(h) where h is the height of the tree
+//– Example: first node in <A>’s subtree is <F>
+// the left most
+//
+//Find successor of node <X> in the traversal order (predecessor is symmetric)
+//– If <X> has right child, return first of right subtree
+//– Otherwise, return lowest ancestor of <X> for which <X> is in its left subtree
+//– Running time is O(h) where h is the height of the tree
+//– Example: Successor of: <B> is <E>, <E> is <A>, and <C> is None
+
 public class BinaryTree
 {
     // variables
@@ -39,6 +53,10 @@ public class BinaryTree
        }
     }
 
+    //List nodes in traversal order via a recursive algorithm starting at root:
+    //– Recursively list left subtree, list self, then recursively list right subtree
+    //– Runs in O(n) time, since O(1) work is done to list each node
+    //– Example: Traversal order is (<F>, <D>, <B>, <E>, <A>, <C>)
     public String toString()
     {
         String out = root.printBranches();
