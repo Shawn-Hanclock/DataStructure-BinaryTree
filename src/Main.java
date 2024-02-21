@@ -18,6 +18,7 @@ public class Main {
         tree.addData(4);
         System.out.println("tree: " + tree);
         System.out.println("tree leafs: " + tree.getRoot().leafCount());
+        // tree.getLeft().addNew()
 
         System.out.printf("%s %s!%n", "Hello", "World");
     }

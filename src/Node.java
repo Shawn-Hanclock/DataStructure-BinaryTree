@@ -1,11 +1,12 @@
 public class Node
 {
+    //instance variables
     private Integer data;
     private Node left;
     private Node right;
     private Node parent;
-    //data
-    //pointer left and right
+    
+    //constructors
     public Node(int data)
     {
         this.data = data;
@@ -27,22 +28,8 @@ public class Node
         right = null;
         parent = null;
     }
-    //binary tree add data
-    //1 initalize if there is no data
-    //2 if not empty get the front element
-    // - if the front element does not have a left child then set the left child to a new node
-    // - if the right child is not present set the right child as new node
-    //3 if the node has both the children then pop it from the queue
-    //4 enqueue the new data
-    public void addNew(int addData, Node newParent)
-    {
-         if(newParent.left == null)
-            newParent.left = new Node(addData, newParent);
-         else if(newParent.right == null)
-            newParent.right = new Node(addData, newParent);
-         else
-            addNew(addData, left);
-    }
+
+    //getters and setters
     public void setData(int data) {
         this.data = data;
     }
@@ -75,6 +62,24 @@ public class Node
     {
         parent.setData(data);
     }
+
+    //brain methods
+    //binary tree add data
+    //1 initalize if there is no data
+    //2 if not empty get the front element
+    // - if the front element does not have a left child then set the left child to a new node
+    // - if the right child is not present set the right child as new node
+    //3 if the node has both the children then pop it from the queue
+    //4 enqueue the new data
+    public void addNew(int addData, Node newParent)
+    {
+         if(newParent.left == null)
+            newParent.left = new Node(addData, newParent);
+         else if(newParent.right == null)
+            newParent.right = new Node(addData, newParent);
+         else
+            addNew(addData, left);
+    }
     public boolean isLeaf()
     {
         return left == null && right == null;
@@ -95,19 +100,24 @@ public class Node
     //– Recursively list left subtree, list self, then recursively list right subtree
     //– Runs in O(n) time, since O(1) work is done to list each node
     //– Example: Traversal order is (<F>, <D>, <B>, <E>, <A>, <C>)
-    public String printBranches()
+    public String printBranches() //used in binary tree toString
     {
         if(data == null) {
             return "";
         }
+        String output = data.toString();
+        if(left != null)
+            output = left.printBranches() + output;
+        if(right != null)
+            output = output + right.printBranches(); 
 //        String output = data.toString() + " ";
 //        String temp = output;
 //        if(left != null)
 //            output = left.printBranches() + temp;
 //        if(right != null)
 //            output = temp + right.printBranches();
-//        return output;
-        String output = data.toString() + " ";
+// //        return output;
+//         String output = data.toString() + " ";
         return output;
     }
 }
