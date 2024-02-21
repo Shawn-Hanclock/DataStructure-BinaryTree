@@ -95,7 +95,13 @@ public class Node
             count += right.leafCount();
         return count;
     }
-
+    private void add(int data)
+    {
+        if(left == null)
+            left = new Node(data);
+        else if(right == null)
+            right = new Node(data);
+    }
     //List nodes in traversal order via a recursive algorithm starting at root:
     //– Recursively list left subtree, list self, then recursively list right subtree
     //– Runs in O(n) time, since O(1) work is done to list each node
