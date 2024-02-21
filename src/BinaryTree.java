@@ -53,10 +53,6 @@ public class BinaryTree
        }
     }
 
-    //List nodes in traversal order via a recursive algorithm starting at root:
-    //– Recursively list left subtree, list self, then recursively list right subtree
-    //– Runs in O(n) time, since O(1) work is done to list each node
-    //– Example: Traversal order is (<F>, <D>, <B>, <E>, <A>, <C>)
     public String toString()
     {
         String out = root.printBranches();
