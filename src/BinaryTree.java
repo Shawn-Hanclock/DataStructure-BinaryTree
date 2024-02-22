@@ -45,7 +45,11 @@ public class BinaryTree
     public String toString()
     {
         String out = root.printBranches();
-        return out.equals("")? "Tree yet to be filled."
-                :"[" + out.replaceAll(" ", ", ") + "]";
+        if(out.equals(""))
+            return "Tree yet to be filled.";
+        else {
+            out = out.substring(0,out.length()-1);
+            return "[" + out.replaceAll(" ", ", ") + "]";
+        }
     }
 }
