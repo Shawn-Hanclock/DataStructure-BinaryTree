@@ -7,21 +7,21 @@ public class Node
     private Node parent;
     
     //constructors
-    public Node(int data)
+    public Node(int data) //used to create root
     {
         this.data = data;
         left = null;
         right = null;
         parent = null;
     }
-    public Node(int data, Node parent)
+    public Node(int data, Node parent) //used to create new nodes
     {
         this.data = data;
         left = null;
         right = null;
         this.parent = parent;
     }
-    public Node()
+    public Node() //used to create empty root
     {
         data = null;
         left = null;
@@ -30,10 +30,12 @@ public class Node
     }
 
     //getters and setters
-    public void setData(int data) {
+    public void setData(int data)
+    {
         this.data = data;
     }
-    public Integer getData() {
+    public Integer getData() //try catch to avoid NullPointerException
+    {
         try {
             int num = data.intValue();
             return num;
@@ -42,7 +44,8 @@ public class Node
             return null;
         }
     }
-    public void setLeft(int data) {
+    public void setLeft(int data)
+    {
         left.setData(data);
     }
     public void setRight(int data) {
@@ -64,8 +67,7 @@ public class Node
     }
 
     //brain methods
-    //finds the height of current node from root
-    public int findHeight()
+    public int findHeight() //finds the distance to root node
     {
         int count = 0;
         Node check = this;
@@ -76,79 +78,50 @@ public class Node
         }
         return count;
     }
-    //finds the next left most node
-    private Node findNext()
+    private Node findNext() //finds the left most node, to keep it as a complete binary tree
     {
         if(right != null && left != null)
         {
             Node sub1 = left.findNext();
             Node sub2 = right.findNext();
-            // System.out.println("height of sub1: " + sub1.findHeight());
-            // System.out.println("height of sub2: " + sub2.findHeight());
             if(sub1.findHeight() > sub2.findHeight())
             {
-                if(sub1.parent.getRight() == null)
-                    return sub1;
+                if(sub1.parent.getRight() == null) return sub1;
                 return sub2;
             }
-            if(sub1.findHeight() < sub2.findHeight())
+            else if(sub1.findHeight() < sub2.findHeight())
             {
-                if(sub2.parent.getRight() == null)
-                    return sub2;
+                if(sub2.parent.getRight() == null) return sub2;
                 return sub1;
             }
-            else
-            {
-                return sub1;
-            }
+            else return sub1;
         }
-        else {
-            return this;
-        }
+        else return this;
     }
     public void addNew(int addData)
     {
         Node addLeaf = this.findNext();
-        if(addLeaf.left != null)
-            addLeaf.right = new Node(addData, addLeaf);
-        else
-            addLeaf.left = new Node(addData, addLeaf);
+        if(addLeaf.left != null) addLeaf.right = new Node(addData, addLeaf);
+        else addLeaf.left = new Node(addData, addLeaf);
     }
-
-    private boolean isLeaf()
+    private boolean isLeaf() //leafs will have two empty child references
     {
         return left == null && right == null;
     }
     public int leafCount() //1 leaf or 2 leaf or 0 leaf
     {
         int count = 0;
-        if(this.isLeaf())
-            return 1;
-        if(left != null)
-            count += left.leafCount();
-        if(right != null)
-            count += right.leafCount();
+        if(this.isLeaf()) return 1;
+        if(left != null) count += left.leafCount();
+        if(right != null) count += right.leafCount();
         return count;
     }
-    // private void add(int data)
-    // {
-    //     if(left == null)
-    //         left = new Node(data);
-    //     else if(right == null)
-    //         right = new Node(data);
-    // }
-
-    //in traverse order
-    public String printBranches() //used in binary tree toString
+    public String printBranches() //print the branches with inorder traversal
     {
-        if(data == null) {
-            return "";
-        }
+        if(data == null) return "";
         String output = data.toString() + " ";
-        if(left != null)
-            output = left.printBranches() + output;
-        if(right != null)
-            output = output + right.printBranches();
+        if(left != null) output = left.printBranches() + output;
+        if(right != null) output = output + right.printBranches();
         return output;
     }
 }

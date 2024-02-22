@@ -7,6 +7,7 @@ public class Main {
         System.out.println(empty);
         empty.addData(0);
         System.out.println("empty: " + empty);
+        System.out.println("empty root: " + empty.getRoot());
         System.out.println("empty leafs: " + empty.treeLeaf());
 
         BinaryTree tree = new BinaryTree(1);
@@ -29,11 +30,13 @@ public class Main {
         tree.addData(18);
         tree.addData(19);
         System.out.println("tree: " + tree);
+        System.out.println("tree root: " + tree.getRoot());
         System.out.println("tree leafs: " + tree.treeLeaf());
 
         int[] nums = {0,1,2,3,4,5,6,7,8,9,10};
         BinaryTree treeArr = new BinaryTree(nums);
         System.out.println("treeArr: " + treeArr);
+        System.out.println("treeArr root: " + treeArr.getRoot());
         System.out.println("treeArr leafs: " + treeArr.treeLeaf());
 
         System.out.printf("%n%s %s!%n", "Hello", "World");

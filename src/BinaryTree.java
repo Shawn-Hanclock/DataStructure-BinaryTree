@@ -11,9 +11,8 @@ public class BinaryTree
     public BinaryTree(int[] data)
     {
         root = new Node();
-        for(int val: data)
-        {
-            this.addData(val);
+        for(int n: data) {
+            this.addData(n);
         }
     }
     public BinaryTree()
@@ -33,16 +32,20 @@ public class BinaryTree
     }
     public void addData(int data)
     {
-       if(root.getData() == null) {
-           root.setData(data);
-       }
-       else {
-            root.addNew(data);
-       }
+       if(root.getData() != null) root.addNew(data);
+       else root.setData(data);
+    }
+    public void addData(int[] data)
+    {
+        for(int n: data) {
+            if(root.getData() != null) root.addNew(n);
+            else root.setData(n);
+        }
     }
     public String toString()
     {
         String out = root.printBranches();
-        return out.equals("")? "Tree yet to be filled.": "[" + out.replaceAll(" ", ", ") + "]";
+        return out.equals("")? "Tree yet to be filled."
+                :"[" + out.replaceAll(" ", ", ") + "]";
     }
 }
