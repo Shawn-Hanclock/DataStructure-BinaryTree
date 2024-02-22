@@ -7,49 +7,35 @@ public class Main {
         System.out.println(empty);
         empty.addData(0);
         System.out.println("empty: " + empty);
+        System.out.println("empty leafs: " + empty.treeLeaf());
 
         BinaryTree tree = new BinaryTree(1);
-        System.out.println("tree: " + tree);
         tree.addData(2);
-        System.out.println("tree: " + tree);
-        tree.addData(3);
-        System.out.println("tree: " + tree);
-        System.out.println("tree leafs: " + tree.getRoot().leafCount());
+        tree.addData(3); 
         tree.addData(4);
-        System.out.println("tree: " + tree);
         tree.addData(5);
-        System.out.println("tree: " + tree);
         tree.addData(6);
-        System.out.println("tree: " + tree);
         tree.addData(7);
-        System.out.println("tree: " + tree);
         tree.addData(8);
-        System.out.println("tree: " + tree);
         tree.addData(9);
-        System.out.println("tree: " + tree);
         tree.addData(10);
-        System.out.println("tree: " + tree);
         tree.addData(11);
-        System.out.println("tree: " + tree);
         tree.addData(12);
-        System.out.println("tree: " + tree);
         tree.addData(13);
-        System.out.println("tree: " + tree);
         tree.addData(14);
-        System.out.println("tree: " + tree);
         tree.addData(15);
-        System.out.println("tree: " + tree);
         tree.addData(16);
-        System.out.println("tree: " + tree);
         tree.addData(17);
-        System.out.println("tree: " + tree);
         tree.addData(18);
-        System.out.println("tree: " + tree);
         tree.addData(19);
         System.out.println("tree: " + tree);
-        System.out.println("tree leafs: " + tree.getRoot().leafCount());
-        // tree.getLeft().addNew()
+        System.out.println("tree leafs: " + tree.treeLeaf());
 
-        System.out.printf("%s %s!%n", "Hello", "World");
+        int[] nums = {0,1,2,3,4,5,6,7,8,9,10};
+        BinaryTree treeArr = new BinaryTree(nums);
+        System.out.println("treeArr: " + treeArr);
+        System.out.println("treeArr leafs: " + treeArr.treeLeaf());
+
+        System.out.printf("%n%s %s!%n", "Hello", "World");
     }
 }
