@@ -64,24 +64,7 @@ public class Node
     }
 
     //brain methods
-    //binary tree add data
-    //1 initalize if there is no data
-    //2 if not empty get the front element
-    // - if the front element does not have a left child then set the left child to a new node
-    // - if the right child is not present set the right child as new node
-    //3 if the node has both the children then pop it from the queue
-    //4 enqueue the new data
-
-    //Find first node in the traversal order of node <X>’s subtree (last is symmetric)
-    //– If <X> has left child, recursively return the first node in the left subtree
-    //– Otherwise, <X> is the first node, so return it
-    //– Running time is O(h) where h is the height of the tree
-    //– Example: first node in <A>’s subtree is <F>
-    //Find successor of node <X> in the traversal order (predecessor is symmetric)
-    //– If <X> has right child, return first of right subtree
-    //– Otherwise, return lowest ancestor of <X> for which <X> is in its left subtree
-    //– Running time is O(h) where h is the height of the tree
-    //– Example: Successor of: <B> is <E>, <E> is <A>, and <C> is None
+    //finds the height of current node from root
     public int findHeight()
     {
         int count = 0;
@@ -93,22 +76,15 @@ public class Node
         }
         return count;
     }
-
-//    public Node findNext()
-//    {
-//         if(left == null)
-//             return this;
-//         else
-//             return right != null ? this: left.findNext();
-//    }
-    public Node findNext()
+    //finds the next left most node
+    private Node findNext()
     {
         if(right != null && left != null)
         {
             Node sub1 = left.findNext();
             Node sub2 = right.findNext();
-            System.out.println("height of sub1: " + sub1.findHeight());
-            System.out.println("height of sub2: " + sub2.findHeight());
+            // System.out.println("height of sub1: " + sub1.findHeight());
+            // System.out.println("height of sub2: " + sub2.findHeight());
             if(sub1.findHeight() > sub2.findHeight())
             {
                 if(sub1.parent.getRight() == null)
@@ -138,7 +114,8 @@ public class Node
         else
             addLeaf.left = new Node(addData, addLeaf);
     }
-    public boolean isLeaf()
+
+    private boolean isLeaf()
     {
         return left == null && right == null;
     }
@@ -153,13 +130,15 @@ public class Node
             count += right.leafCount();
         return count;
     }
-    private void add(int data)
-    {
-        if(left == null)
-            left = new Node(data);
-        else if(right == null)
-            right = new Node(data);
-    }
+    // private void add(int data)
+    // {
+    //     if(left == null)
+    //         left = new Node(data);
+    //     else if(right == null)
+    //         right = new Node(data);
+    // }
+
+    //in traverse order
     public String printBranches() //used in binary tree toString
     {
         if(data == null) {
