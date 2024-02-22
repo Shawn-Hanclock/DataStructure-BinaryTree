@@ -49,13 +49,14 @@ public class BinaryTree
            root.setData(data);
        }
        else {
-            root.addNew(data, root);
+            root.addNew(data);
        }
     }
 
     public String toString()
     {
         String out = root.printBranches();
+//        System.out.println("successor: " + root.find().getData()+ " height: " + root.findFirst().findHeight());
         return out.equals("")? "Tree yet to be filled.": out;
     }
 }

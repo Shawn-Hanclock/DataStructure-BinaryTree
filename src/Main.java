@@ -8,16 +8,16 @@ public class Main {
         empty.addData(0);
         System.out.println("empty: " + empty);
 
-        BinaryTree tree = new BinaryTree(1);
+        BinaryTree tree = new BinaryTree(100);
         System.out.println("tree: " + tree);
-        tree.addData(2);
+        tree.addData(200);
         System.out.println("tree: " + tree);
-        tree.addData(3);
+        tree.addData(300);
         System.out.println("tree: " + tree);
         System.out.println("tree leafs: " + tree.getRoot().leafCount());
-        tree.addData(4);
+        tree.addData(400);
         System.out.println("tree: " + tree);
-        tree.addData(5);
+        tree.addData(500);
         System.out.println("tree: " + tree);
         System.out.println("tree leafs: " + tree.getRoot().leafCount());
         // tree.getLeft().addNew()

@@ -82,14 +82,43 @@ public class Node
     //– Otherwise, return lowest ancestor of <X> for which <X> is in its left subtree
     //– Running time is O(h) where h is the height of the tree
     //– Example: Successor of: <B> is <E>, <E> is <A>, and <C> is None
-    public void addNew(int addData, Node newParent)
+    public int findHeight()
     {
-         if(newParent.left == null)
-            newParent.left = new Node(addData, newParent);
-         else if(newParent.right == null)
-            newParent.right = new Node(addData, newParent);
-         else
-            addNew(addData, left);
+        int count = -1;
+        Node check = this;
+        while(check != null)
+        {
+            count++;
+            check = check.parent;
+        }
+        return count;
+    }
+
+//    public Node findSuccessor()
+//    {
+//        return this;
+//    }
+    public Node findNext()
+    {
+        if(right != null && left != null)
+        {
+            return left.findNext().findHeight() >= right.findNext().findHeight()? right.findNext(): left.findNext();
+        }
+        else if(left != null)
+            return left.findNext();
+        else if(right != null)
+            return right.findNext();
+        else {
+            return this;
+        }
+    }
+    public void addNew(int addData)
+    {
+        Node addLeaf = this.findNext();
+        if(addLeaf.left != null)
+            addLeaf.right = new Node(addData);
+        else
+            addLeaf.left = new Node(addData);
     }
     public boolean isLeaf()
     {
@@ -118,7 +147,7 @@ public class Node
         if(data == null) {
             return "";
         }
-        String output = data.toString();
+        String output = data.toString() + " ";
         if(left != null)
             output = left.printBranches() + output;
         if(right != null)
