@@ -84,30 +84,48 @@ public class Node
     //– Example: Successor of: <B> is <E>, <E> is <A>, and <C> is None
     public int findHeight()
     {
-        int count = -1;
+        int count = 0;
         Node check = this;
-        while(check != null)
+        while(check.getParent() != null)
         {
             count++;
-            check = check.parent;
+            check = check.getParent();
         }
         return count;
     }
 
-//    public Node findSuccessor()
+//    public Node findNext()
 //    {
-//        return this;
+//         if(left == null)
+//             return this;
+//         else
+//             return right != null ? this: left.findNext();
 //    }
     public Node findNext()
     {
         if(right != null && left != null)
         {
-            return left.findNext().findHeight() >= right.findNext().findHeight()? right.findNext(): left.findNext();
+            Node sub1 = left.findNext();
+            Node sub2 = right.findNext();
+            System.out.println("height of sub1: " + sub1.findHeight());
+            System.out.println("height of sub2: " + sub2.findHeight());
+            if(sub1.findHeight() > sub2.findHeight())
+            {
+                if(sub1.parent.getRight() == null)
+                    return sub1;
+                return sub2;
+            }
+            if(sub1.findHeight() < sub2.findHeight())
+            {
+                if(sub2.parent.getRight() == null)
+                    return sub2;
+                return sub1;
+            }
+            else
+            {
+                return sub1;
+            }
         }
-        else if(left != null)
-            return left.findNext();
-        else if(right != null)
-            return right.findNext();
         else {
             return this;
         }
@@ -116,9 +134,9 @@ public class Node
     {
         Node addLeaf = this.findNext();
         if(addLeaf.left != null)
-            addLeaf.right = new Node(addData);
+            addLeaf.right = new Node(addData, addLeaf);
         else
-            addLeaf.left = new Node(addData);
+            addLeaf.left = new Node(addData, addLeaf);
     }
     public boolean isLeaf()
     {

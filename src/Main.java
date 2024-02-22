@@ -19,6 +19,12 @@ public class Main {
         System.out.println("tree: " + tree);
         tree.addData(500);
         System.out.println("tree: " + tree);
+        tree.addData(600);
+        System.out.println("tree: " + tree);
+        tree.addData(700);
+        System.out.println("tree: " + tree);
+        tree.addData(800);
+        System.out.println("tree: " + tree);
         System.out.println("tree leafs: " + tree.getRoot().leafCount());
         // tree.getLeft().addNew()
 
