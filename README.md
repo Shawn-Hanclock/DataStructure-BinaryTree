@@ -1,18 +1,18 @@
 ### Project Details
-> <table>
+> <table style="vertical-align:top">
 >   <tr>
 >     <th>Main.java</th>
 >     <th>BinaryTree.java</th>
 >     <th>Node.java</th>
 >   </tr>
 >   <tr>
->     <td>N/A<br><br><br><br></td>
->     <td>- final root: Node<br><br><br><br></td>
+>     <td>N/A</td>
+>     <td>- final root: Node</td>
 >     <td>- data: Integer<br>- left: Node<br>- right:Node<br>- parent: Node</td>
 >   </tr>
 >   <tr>
->     <td>+ static main(String[] args): void<br><br><br><br><br></td>
->     <td>+ getRoot(): Node<br>+ treeLeaf(): int<br>+ addData(data: int): void<br>+ addData(data: int[]): void<br>+ toString(): String<br></td>
+>     <td>+ static main(String[] args): void</td>
+>     <td>+ getRoot(): Node<br>+ treeLeaf(): int<br>+ addData(data: int): void<br>+ addData(data: int[]): void<br>+ toString(): String</td>
 >     <td>+ setData(data: int): void<br>+ getData(): Integer<br>+ getRight(): Node<br>+ getParent(): Node<br>+ findHeight(): int<br>+ findNext(): Node<br>+ addNew(addData: int): void<br>+ isLeaf(): boolean<br>+ leafCount(): int<br>+ printBranches(): String</td>
 >   </tr>
 > </table>
