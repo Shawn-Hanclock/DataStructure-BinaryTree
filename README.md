@@ -7,11 +7,11 @@
 >   </tr>
 >   <tr>
 >     <td></td>
->     <td>- root: Node</td>
+>     <td>- root: Node<br><br><br><br></td>
 >     <td>- data: Integer<br>- left: Node<br>- right:Node<br>- parent: Node</td>
 >   </tr>
 >   <tr>
->     <td></td>
+>     <td>+ setData(data: int): void<br>+ getData(): Integer<br>+ getRight(): Node<br>+ getParent(): Node<br>+ findHeight(): int<br>+ findNext(): Node<br>+ addNew(addData: int): void<br></td>
 >     <td></td>
 >     <td></td>
 >   </tr>
