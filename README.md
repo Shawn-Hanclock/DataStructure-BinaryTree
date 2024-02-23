@@ -6,7 +6,7 @@
 >     <th>Node.java</th>
 >   </tr>
 >   <tr>
->     <td>N/A<br><br><br><br><br></td>
+>     <td>N/A<br><br><br><br></td>
 >     <td>- final root: Node<br><br><br><br></td>
 >     <td>- data: Integer<br>- left: Node<br>- right:Node<br>- parent: Node</td>
 >   </tr>
