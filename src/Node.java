@@ -37,23 +37,23 @@ public class Node
     public Integer getData() //try catch to avoid NullPointerException
     {
         try {
-            int num = data.intValue();
-            return num;
+            return data;
         }
         catch(NullPointerException e) {
             return null;
         }
     }
-    public void setLeft(int data)
-    {
-        left.setData(data);
-    }
-    public void setRight(int data) {
-        right.setData(data);
-    }
-    public Node getLeft() {
-        return left;
-    }
+//    public void setLeft(int data)
+//    {
+//        left.setData(data);
+//    }
+//    public void setRight(int data) {
+//        right.setData(data);
+//    }
+//    public Node getLeft() {
+//        return left;
+//    }
+
     public Node getRight() {
         return right;
     }
@@ -61,10 +61,11 @@ public class Node
     {
         return parent;
     }
-    public void setParent(int data)
-    {
-        parent.setData(data);
-    }
+
+//    public void setParent(int data)
+//    {
+//        parent.setData(data);
+//    }
 
     //brain methods
     public int findHeight() //finds the distance to root node
@@ -119,7 +120,7 @@ public class Node
     public String printBranches() //print the branches with inorder traversal
     {
         if(data == null) return "";
-        String output = data.toString() + " ";
+        String output = data + " ";
         if(left != null) output = left.printBranches() + output;
         if(right != null) output = output + right.printBranches();
         return output;

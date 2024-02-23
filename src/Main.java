@@ -15,11 +15,11 @@ public class Main {
 
         BinaryTree tree = new BinaryTree(1);
         tree.addData(2);
-        tree.addData(3); 
-        tree.addData(4);
-        tree.addData(5);
-        tree.addData(6);
-        tree.addData(7);
+        tree.addData(3);
+        System.out.println("tree: " + tree);
+        System.out.println("tree root: " + tree.getRoot());
+        System.out.println("tree leafs: " + tree.treeLeaf());
+        tree.addData(new int[]{4,5,6,7});
         System.out.println("tree: " + tree);
         System.out.println("tree root: " + tree.getRoot());
         System.out.println("tree leafs: " + tree.treeLeaf());

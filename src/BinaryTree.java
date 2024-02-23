@@ -1,7 +1,7 @@
 public class BinaryTree
 {
     // variables
-    private Node root;
+    private final Node root;
 
     // constructor
     public BinaryTree(int data)
