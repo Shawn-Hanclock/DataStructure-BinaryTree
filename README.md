@@ -13,7 +13,7 @@
 >   <tr style="vertical-align:top">
 >     <td>+ static main(String[] args): void</td>
 >     <td>+ getRoot(): Node<br>+ treeLeaf(): int<br>+ addData(data: int): void<br>+ addData(data: int[]): void<br>+ toString(): String</td>
->     <td>+ setData(data: int): void<br>+ getData(): Integer<br>+ getRight(): Node<br>+ getParent(): Node<br>+ findHeight(): int<br>+ findNext(): Node<br>+ addNew(addData: int): void<br>+ isLeaf(): boolean<br>+ leafCount(): int<br>+ printBranches(): String</td>
+>     <td>+ setData(data: int): void<br>+ getData(): Integer<br>+ getRight(): Node<br>+ getParent(): Node<br>+ findHeight(): int<br>- findNext(): Node<br>+ addNew(addData: int): void<br>- isLeaf(): boolean<br>+ leafCount(): int<br>+ printBranches(): String</td>
 >   </tr>
 > </table>
 
