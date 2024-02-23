@@ -11,7 +11,7 @@
 >     <td>- data: Integer<br>- left: Node<br>- right:Node<br>- parent: Node</td>
 >   </tr>
 >   <tr>
->     <td>+ static main(String[] args): void<br><br><br><br></td>
+>     <td>+ static main(String[] args): void<br><br><br><br><br></td>
 >     <td>+ setData(data: int): void<br>+ getData(): Integer<br>+ getRight(): Node<br>+ getParent(): Node<br>+ findHeight(): int<br>+ findNext(): Node<br>+ addNew(addData: int): void<br></td>
 >     <td></td>
 >   </tr>
