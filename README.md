@@ -1,4 +1,21 @@
 ### Project Details
+> <table>
+>   <tr>
+>     <th>Main.java</th>
+>     <th>BinaryTree.java</th>
+>     <th>Node.java</th>
+>   </tr>
+>   <tr>
+>     <td></td>
+>     <td>Node root</td>
+>     <td>Integer data<br> Node left<br> Node right<br> Node parent</td>
+>   </tr>
+>   <tr>
+>     <td></td>
+>     <td></td>
+>     <td></td>
+>   </tr>
+> </table>
 
 ### Assignment Requirements
 > 1. Data visualization 
