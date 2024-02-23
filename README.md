@@ -7,8 +7,8 @@
 >   </tr>
 >   <tr>
 >     <td></td>
->     <td>Node root</td>
->     <td>Integer data<br> Node left<br> Node right<br> Node parent</td>
+>     <td>- root: Node</td>
+>     <td>- data: Integer<br>- left: Node<br>- right:Node<br>- parent: Node</td>
 >   </tr>
 >   <tr>
 >     <td></td>
