@@ -5,15 +5,15 @@
 >     <th>BinaryTree.java</th>
 >     <th>Node.java</th>
 >   </tr>
->   <tr style="horizontal-align:top">
->     <td>N/A</td>
->     <td>- final root: Node</td>
->     <td>- data: Integer<br>- left: Node<br>- right:Node<br>- parent: Node</td>
+>   <tr>
+>     <td style="vertical-align: top;">N/A</td>
+>     <td style="vertical-align: top;">- final root: Node</td>
+>     <td style="vertical-align: top;">- data: Integer<br>- left: Node<br>- right:Node<br>- parent: Node</td>
 >   </tr>
->   <tr style="horizontal-align:top">
->     <td>+ static main(String[] args): void</td>
->     <td>+ getRoot(): Node<br>+ treeLeaf(): int<br>+ addData(data: int): void<br>+ addData(data: int[]): void<br>+ toString(): String</td>
->     <td>- findNext(): Node<br>- isLeaf(): boolean<br>+ setData(data: int): void<br>+ getData(): Integer<br>+ getRight(): Node<br>+ getParent(): Node<br>+ findHeight(): int<br>+ addNew(addData: int): void<br>+ leafCount(): int<br>+ printBranches(): String</td>
+>   <tr>
+>     <td style="vertical-align: top;">+ static main(String[] args): void</td>
+>     <td style="vertical-align: top;">+ getRoot(): Node<br>+ treeLeaf(): int<br>+ addData(data: int): void<br>+ addData(data: int[]): void<br>+ toString(): String</td>
+>     <td style="vertical-align: top;">- findNext(): Node<br>- isLeaf(): boolean<br>+ setData(data: int): void<br>+ getData(): Integer<br>+ getRight(): Node<br>+ getParent(): Node<br>+ findHeight(): int<br>+ addNew(addData: int): void<br>+ leafCount(): int<br>+ printBranches(): String</td>
 >   </tr>
 > </table>
 
