@@ -68,18 +68,24 @@ public class Node
 //    }
 
     //brain methods
-    public int findHeight() //finds the distance to root node
+//    public int findHeight() //finds the distance to root node
+//    {
+//        int count = 0;
+//        Node check = this;
+//        while(check.getParent() != null)
+//        {
+//            count++;
+//            check = check.getParent();
+//        }
+//        return count;
+//    }
+
+    public int findHeight() //finds the distance to root node, recursively
     {
-        int count = 0;
-        Node check = this;
-        while(check.getParent() != null)
-        {
-            count++;
-            check = check.getParent();
-        }
-        return count;
+        if(parent == null) return 0;
+        return 1 + parent.findHeight();
     }
-    private Node findNext() //finds the left most node, to keep it as a complete binary tree
+    private Node findNext() //finds the left most node, will keep it as a complete binary tree
     {
         if(right != null && left != null)
         {

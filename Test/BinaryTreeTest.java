@@ -1,25 +1,44 @@
 import org.junit.jupiter.api.Test;
-//import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 class BinaryTreeTest {
-
+    BinaryTree empty = new BinaryTree();
     @Test
-    void getRoot() {
+    void emptyToStringPass()
+    {
+        String str = empty.toString();
+        assertTrue(str.equals("Tree yet to be filled."));
     }
-
     @Test
-    void treeLeaf() {
+    void emptyToStringFail()
+    {
+        assertFalse(empty.equals("Tree yet to be filled."));
     }
-
     @Test
-    void addData() {
+    void emptyAddDataPass()
+    {
+        empty.addData(0);
+        String str = empty.toString();
+        assertTrue(str.equals("[0]"));
     }
-
     @Test
-    void testAddData() {
+    void emptyAddDataFail()
+    {
+        empty.addData(0.2);
+        String str = empty.toString();
+        assertTrue(str.equals("[0]"));
     }
-
     @Test
-    void testToString() {
+    void emptyGetRootDataPass()
+    {
+        empty.addData(0);
+        Node root = empty.getRoot();
+        assertEquals(0, root.getData());
+    }
+    @Test
+    void emptyTreeLeafPass()
+    {
+        int leafs = empty.treeLeaf();
+        assertEquals(1, leafs);
     }
 }

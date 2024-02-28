@@ -6,14 +6,14 @@
 >     <th>Node.java</th>
 >   </tr>
 >   <tr>
->     <td style="vertical-align: top;">N/A</td>
->     <td style="vertical-align: top;">- final root: Node</td>
->     <td style="vertical-align: top;">- data: Integer<br>- left: Node<br>- right:Node<br>- parent: Node</td>
+>     <td style="horizontal-align: top;">N/A</td>
+>     <td style="horizontal-align: top;">- final root: Node</td>
+>     <td style="horizontal-align: top;">- data: Integer<br>- left: Node<br>- right:Node<br>- parent: Node</td>
 >   </tr>
 >   <tr>
->     <td style="vertical-align: top;">+ static main(String[] args): void</td>
->     <td style="vertical-align: top;">+ getRoot(): Node<br>+ treeLeaf(): int<br>+ addData(data: int): void<br>+ addData(data: int[]): void<br>+ toString(): String</td>
->     <td style="vertical-align: top;">- findNext(): Node<br>- isLeaf(): boolean<br>+ setData(data: int): void<br>+ getData(): Integer<br>+ getRight(): Node<br>+ getParent(): Node<br>+ findHeight(): int<br>+ addNew(addData: int): void<br>+ leafCount(): int<br>+ printBranches(): String</td>
+>     <td style="horizontal-align: top;">+ static main(String[] args): void</td>
+>     <td style="horizontal-align: top;">+ getRoot(): Node<br>+ treeLeaf(): int<br>+ addData(data: int): void<br>+ addData(data: int[]): void<br>+ toString(): String</td>
+>     <td style="horizontal-align: top;">- findNext(): Node<br>- isLeaf(): boolean<br>+ setData(data: int): void<br>+ getData(): Integer<br>+ getRight(): Node<br>+ getParent(): Node<br>+ findHeight(): int<br>+ addNew(addData: int): void<br>+ leafCount(): int<br>+ printBranches(): String</td>
 >   </tr>
 > </table>
 
