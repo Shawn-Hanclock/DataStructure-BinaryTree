@@ -4,7 +4,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class BinaryTreeTest {
     BinaryTree empty = new BinaryTree();
     BinaryTree tree = new BinaryTree(1);
-    BinaryTree treeArr = new BinaryTree();
     @Test
     void emptyToStringPass()
     {
@@ -94,4 +93,12 @@ class BinaryTreeTest {
         assertEquals(expected, tree.toString());
     }
 
+    int[] dataFromTree = tree.toArray();
+    BinaryTree treeArr = new BinaryTree();
+    @Test
+    void treeArrAddedViaToArrayPass()
+    {
+        treeArr.addData(dataFromTree);
+        assertTrue(treeArr.toArray().equals(dataFromTree));
+    }
 }
