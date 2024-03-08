@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class BinaryTree
 {
     // variables
@@ -51,5 +53,17 @@ public class BinaryTree
             out = out.substring(0,out.length()-1);
             return "[" + out.replaceAll(" ", ", ") + "]";
         }
+    }
+    public int[] toArray()
+    {
+        String out = root.printBranches();
+        String[] outArr = out.split(" ");
+        int nodes = outArr.length;
+        int[] array = new int[nodes];
+        for(int i = 0; i < nodes; i++)
+        {
+            array[i] = Integer.parseInt(outArr[i]);
+        }
+        return array;
     }
 }
