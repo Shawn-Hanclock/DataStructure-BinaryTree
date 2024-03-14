@@ -5,7 +5,7 @@ public class Main {
         - an insert method that inserts at a specific node
         - make a fancy output that prints it in console to look like a tree*/
 
-        //an empty binary tree
+        //Usage of class, used as reference for test .java
         BinaryTree empty = new BinaryTree();
         System.out.println("empty: " + empty);
         empty.addData(0);

@@ -1,12 +1,12 @@
 public class Node
 {
-    //instance variables
+    // instance variables
     private Integer data;
     private Node left;
     private Node right;
     private Node parent;
     
-    //constructors
+    // constructors
     public Node(int data) //used to create root
     {
         this.data = data;
@@ -29,7 +29,7 @@ public class Node
         parent = null;
     }
 
-    //getters and setters
+    // getters and setters
     public void setData(int data)
     {
         this.data = data;
@@ -43,6 +43,14 @@ public class Node
             return null;
         }
     }
+    public Node getRight() {
+        return right;
+    }
+    public Node getParent()
+    {
+        return parent;
+    }
+// [LEFT UNREMOVED JUST IN CASE]
 //    public void setLeft(int data)
 //    {
 //        left.setData(data);
@@ -54,37 +62,29 @@ public class Node
 //        return left;
 //    }
 
-    public Node getRight() {
-        return right;
-    }
-    public Node getParent()
-    {
-        return parent;
-    }
-
 //    public void setParent(int data)
 //    {
 //        parent.setData(data);
 //    }
 
-    //brain methods
-//    public int findHeight() //finds the distance to root node
-//    {
-//        int count = 0;
-//        Node check = this;
-//        while(check.getParent() != null)
-//        {
-//            count++;
-//            check = check.getParent();
-//        }
-//        return count;
-//    }
-
-    public int findHeight() //finds the distance to root node, recursively
+    // brain methods
+    public int findHeight() //finds the distance to root node
     {
-        if(parent == null) return 0;
-        return 1 + parent.findHeight();
+        int count = 0;
+        Node check = this;
+        while(check.getParent() != null)
+        {
+            count++;
+            check = check.getParent();
+        }
+        return count;
     }
+//    [RECURSIVE VERSION of findHeight()]
+//    public int findHeight() //finds the distance to root node, recursively
+//    {
+//        if(parent == null) return 0;
+//        return 1 + parent.findHeight();
+//    }
     private Node findNext() //finds the left most node, will keep it as a complete binary tree
     {
         if(right != null && left != null)

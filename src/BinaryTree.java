@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+//import java.util.ArrayList;
 
 public class BinaryTree
 {
@@ -22,13 +22,17 @@ public class BinaryTree
         root = new Node();
     }
 
-    //getter
+    // getter and setter
     public Node getRoot()
     {
         return root;
     }
+    public void setRoot(int data)
+    {
+        root.setData(data);
+    }
 
-    //brain methods
+    // brain methods
     public int treeLeaf() {
         return root.leafCount();
     }
@@ -44,6 +48,8 @@ public class BinaryTree
             else root.setData(n);
         }
     }
+
+    // output formatted data
     public String toString()
     {
         String out = root.printBranches();
@@ -57,6 +63,8 @@ public class BinaryTree
     public int[] toArray()
     {
         String out = root.printBranches();
+        if(out == "")
+            return null;
         String[] outArr = out.split(" ");
         int nodes = outArr.length;
         int[] array = new int[nodes];
